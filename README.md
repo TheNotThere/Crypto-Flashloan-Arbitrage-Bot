@@ -25,15 +25,14 @@ pip install scrolledtext
 ```
 These packages are required for the GUI and log display.
 
-2. Initialize Node.js Project
-bash
-Copy code
+## 2. Initialize Node.js Project
+
 ```bash
 npx init -y
 ```
 This creates a package.json file for managing Node.js dependencies required for the bot.
 
-4. Configure Environment Variables
+## 3. Configure Environment Variables
 Create a .env file in the project root with the following content:
 ```bash
 PRIVATE_KEY=your_private_key_here
@@ -46,7 +45,7 @@ Free RPC URLs can be obtained from Alchemy or similar providers.
 
 Keep your private key secure — never share it publicly.
 
-4. Launch the Bot
+## 4. Launch the Bot
 ```bash
 python main.py
 ```
@@ -55,20 +54,3 @@ Enter the amount of ETH you want to use.
 Click Start to run the bot or Stop to terminate it.
 
 Monitor real-time logs in the GUI window.
-
-5. Quick Start Summary
-```bash
-# Install Python dependencies
-pip install tkinter scrolledtext
-```
-# Initialize Node.js project
-```bash
-npx init -y
-```
-# Create .env with your private key and RPC URLs
-
-# Run the bot GUI
-```bash
-python main.py
-```
-Enter your ETH amount and click Start.
