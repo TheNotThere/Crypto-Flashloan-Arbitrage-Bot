@@ -9,9 +9,6 @@ from tkinter import ttk, filedialog, messagebox
 APP_TITLE = "Flashloan Arbitrage Bot"
 JS_ENTRYPOINT = "abridge-bot.js"
 
-# ----------------------------
-# ANSI Color Parsing
-# ----------------------------
 ANSI_COLORS = {
     '31': '#ff4d4f', '32': '#39ff14', '33': '#ffff66',
     '34': '#00bfff', '35': '#ff00ff', '36': '#00ffff', '37': '#ffffff'
@@ -40,9 +37,6 @@ def split_ansi_segments(text: str):
             color = ANSI_COLORS[code]
         i = m_end + 1
 
-# ----------------------------
-# Process Streamer
-# ----------------------------
 class ProcessStreamer:
     def __init__(self, cmd, cwd=None):
         self.cmd = cmd
@@ -84,9 +78,6 @@ class ProcessStreamer:
             pass
         self._stop.set()
 
-# ----------------------------
-# Main App
-# ----------------------------
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
