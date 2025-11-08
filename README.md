@@ -33,7 +33,7 @@ npx init -y
 This creates a package.json file for managing Node.js dependencies required for the bot.
 
 ## 3. Configure Environment Variables
-Create a .env file in the project root with the following content:
+Configure the .env file in the project root with the following content:
 ```bash
 PRIVATE_KEY=your_private_key_here
 WS_RPC_URL=your_websocket_rpc_url_here
