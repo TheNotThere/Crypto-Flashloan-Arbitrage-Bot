@@ -1,6 +1,6 @@
 # Flashloan Arbitrage Bot
 
-A GUI-based flashloan arbitrage bot built with Python and Node.js. This bot allows you to execute Ethereum-based arbitrage operations while monitoring logs in real-time.
+A GUI-based flashloan arbitrage bot built with Python and Node.js. This bot allows you to execute arbitrage operations while monitoring logs in real-time.
 
 ---
 
