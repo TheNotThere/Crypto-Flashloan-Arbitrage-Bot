@@ -4,8 +4,8 @@ const fs = require("fs");
 const {Simulator,Pool} = require("./helpers/pool-eval.js")
 
 
-let provider = new ethers.JsonRpcProvider("https://mainnet.base.org");
-let wsProvider = new ethers.WebSocketProvider("wss://mainnet.base.org")
+let provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
+let wsProvider = new ethers.WebSocketProvider(process.env.RPC_WS)
 const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
 
 
