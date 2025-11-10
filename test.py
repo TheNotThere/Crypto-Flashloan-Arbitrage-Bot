@@ -116,13 +116,14 @@ class App(tk.Tk):
         self._configure_styles()
 
         self.splash_frame = None
+        self.welcome_frame = None
         self.main_frame = None
         self.log = None
         self.start_btn = None
         self.stop_btn = None
 
         self._build_splash()
-        self.after(1800, self._show_dashboard)
+        self.after(1600, self._show_welcome)
 
         self.protocol("WM_DELETE_WINDOW", self.on_close)
 
@@ -177,10 +178,39 @@ class App(tk.Tk):
         subtitle.pack(pady=(0, 16))
         bar.pack()
 
+    def _show_welcome(self):
+        if self.splash_frame is not None:
+            self.splash_frame.destroy()
+            self.splash_frame = None
+        self._build_welcome()
+
+    def _build_welcome(self):
+        self.welcome_frame = tk.Frame(self, bg=self.bg)
+        self.welcome_frame.pack(fill="both", expand=True)
+
+        inner = tk.Frame(self.welcome_frame, bg=self.bg)
+        inner.place(relx=0.5, rely=0.5, anchor="center")
+
+        title = ttk.Label(inner, text="Welcome back!", style="SplashTitle.TLabel")
+        subtitle = ttk.Label(
+            inner,
+            text="Ready when you are. Review logs or jump straight into a new run.",
+            style="SplashSub.TLabel",
+        )
+
+        btn = ttk.Button(inner, text="Go to dashboard", style="Primary.TButton", command=self._show_dashboard)
+
+        title.pack(pady=(0, 6))
+        subtitle.pack(pady=(0, 18))
+        btn.pack(ipadx=12, ipady=2)
+
     def _show_dashboard(self):
         if self.splash_frame is not None:
             self.splash_frame.destroy()
             self.splash_frame = None
+        if self.welcome_frame is not None:
+            self.welcome_frame.destroy()
+            self.welcome_frame = None
         self._build_main_layout()
 
     def _build_main_layout(self):
