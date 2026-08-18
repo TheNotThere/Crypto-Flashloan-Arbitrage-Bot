@@ -204,7 +204,6 @@ async function swap_brain(brainParams) {
     wsProvider.websocket.on("close", async (code) => {
       console.log(`WebSocket closed with code: ${code}`);
 
-      // your reconnect logic
       await reconnect();
       swap_brain(brainParams)
     });
@@ -220,7 +219,7 @@ swap_brain({
   tokens: [
     {
       token: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913", // KTA
-      amountIn: process.argv[2], //edit in real trnsx
+      amountIn: 1000n, //edit in real trnsx
       pools: [
         {
           pool: "0x6c561B446416E1A00E8E93E221854d6eA4171372",
@@ -235,44 +234,10 @@ swap_brain({
           decimalsIn:18,
           version: 0,
           decimalsOut: 6,
-        },
-        //  {
-        //   pool: "0x5aa4AD647580bfE86258d300Bc9852F4434E2c61",
-        //   fee: 3000n,
-        //   decimalsIn:18,
-        //   version: 1,
-        //   decimalsOut: 18,
-        // },
+        }
       
       ],
     },
   ],
 });
-//FIX CONTRACT WITH DECIMALS ERROR
-  //{
-      //   token: "0x1bc0c42215582d5A085795f4baDbaC3ff36d1Bcb", //KTA
-      //   amountIn: 0.5,
 
-      //   pools: [{
-      //     pool: "0xC1a6FBeDAe68E1472DbB91FE29B51F7a0Bd44F97",
-      //     fee: 10000n,
-      //     version: 1,
-      //     decimals: 18, // for decimlas swapping returns the amount out in the out tokens decimals then just reformat to 18 decimals after
-      //   },{
-      //     pool: "0x75fb62AA7d072a6A96692B207278A760E5df42CC",
-      //     fee: 3000n,
-      //     version: 1,
-      //     decimals: 18, // for decimlas swapping returns the amount out in the out tokens decimals then just reformat to 18 decimals after
-      //   },
-      //   {
-      //     pool: "0xd23FE2DB317e1A96454a2D1c7e8fc0DbF19BB000",
-      //     fee: 200n,
-      //     version: 3,
-      //     decimals: 18,
-      //   },
-
-      //   ]
-      // },
-
- 
-//0x940181a94A35A4569E4529A3CDfB74e38FD98631
